@@ -9,7 +9,7 @@ export default function Login(){
     return (
         <div className="auth-wrapper">
             <div className="auth-content text-center">
-                <img src="./assets/images/logo.png" alt="" className="img-fluid mb-4"/>
+                <img src="./assets/images/logo.png" alt="LOGO" className="img-fluid mb-4"/>
                 <div className="card borderless">
                     <div className="row align-items-center">
                         <div className="col-md-12">
@@ -31,7 +31,7 @@ export default function Login(){
                                            placeholder="Contraseña"/>
                                 </div>
                                 <button className="btn btn-block btn-primary mb-4">Iniciar Sesion</button>
-                                <p class="mb-0 text-muted">No tienes una cuenta? 
+                                <p className="mb-0 text-muted">No tienes una cuenta? 
                                  <Link to="/" className="f-w-400">Registrate</Link></p>
                             </div>
                         </div>
