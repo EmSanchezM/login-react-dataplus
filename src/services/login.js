@@ -1,7 +1,7 @@
-const API_URL = 'https://posweb2020.herokuapp.com/api'
+//const API_URL = 'https://posweb2020.herokuapp.com/api'
 
 export default function login({username, password}){
-    return fetch(`${API_URL}/auth/login`, {
+    return fetch(`/auth/login`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
