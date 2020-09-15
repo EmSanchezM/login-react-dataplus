@@ -10,7 +10,7 @@ export default function Login(){
     const [password, setPassword] = useState('')
     const history = useHistory()
 
-    const {login, estaLogeado} = useUser()
+    const {loginCargando, loginError, login, estaLogeado} = useUser()
 
     useEffect(()=>{
         if(estaLogeado) return history.push('/home')
@@ -23,6 +23,7 @@ export default function Login(){
     }
 
     return (
+        <>
         <div className="auth-wrapper">
             <div className="auth-content text-center">
                 <img src={logo} alt="LOGO" className="img-fluid mb-4"/>
@@ -32,6 +33,8 @@ export default function Login(){
                             <div className="card-body">
                                 <h4 className="mb-3 f-w-400">Iniciar Sesion</h4>
                                 <hr/>
+                                {loginCargando && <strong>Verificando credenciales</strong>}
+                                {!loginCargando && 
                                 <form  onSubmit={handleSubmit}>
                                     <div className="form-group mb-3">
                                         <input  type="text" 
@@ -54,11 +57,14 @@ export default function Login(){
                                      <Link to="/" className="f-w-400">Registrate</Link>
                                     </p>
                                 </form>
+                                }
+                                { loginError && <strong>Credenciales no válidas</strong>}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </>
     )
 }
